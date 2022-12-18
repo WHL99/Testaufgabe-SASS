@@ -1,0 +1,12 @@
+$backgroundColor: rgb(238, 174, 202);
+$backgroundColorGradient: linear-gradient(
+  40deg,
+  rgba(238, 174, 202, 1) 0%,
+  rgba(247, 143, 143, 1) 56%,
+  rgba(148, 187, 233, 1) 100%
+);
+
+$fontColor: rgb(0, 0, 0);
+$fontFamily: "Roboto", sans-serif;
+$minSmall: 505px;
+$minMedium: 992px;

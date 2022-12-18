@@ -1,0 +1,52 @@
+@import "./variables";
+
+:root {
+  --color-black: #000902;
+  --color-purple: #ff14ff;
+  --color-blue: #09baf5;
+}
+
+@mixin button($class-name, $color) {
+  .#{$class-name} {
+    position: relative;
+    background-color: var(--color-black);
+    padding: 1rem 2rem;
+    color: $color;
+    border: $color 0.5rem;
+    border-radius: 1rem;
+    text-shadow: 0 0 0.15rem $color, 0 0 1.75rem $color;
+    box-shadow: inset 0 0 3.5rem 0 $color, 0 0 3.5rem 0 $color;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
+      opacity: 0;
+      background-color: $color;
+      box-shadow: 0 0 5rem 1.5rem $color;
+      transition: all 250ms linear;
+    }
+    &:hover {
+      color: var(--color-black);
+      background-color: $color;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@include button("check-btn", var(--color-purple));
+
+@media (max-width: $minSmall) {
+  @include button("check-btn", var(--color-blue));
+}
